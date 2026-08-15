@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "github-actions-log-parser"
+version = "0.1.0"
+description = "Dependency-free CLI that summarizes GitHub Actions failures as JSON"
+requires-python = ">=3.11"
+authors = [{name = "Codex project"}]
+
+[project.scripts]
+gh-actions-log-parser = "gh_actions_parser.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pylint.main]
+py-version = "3.11"
+ignore = ["tests"]
+
+[tool.pylint.messages_control]
+disable = ["missing-function-docstring", "too-few-public-methods"]
+
